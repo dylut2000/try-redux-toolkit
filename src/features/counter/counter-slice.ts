@@ -14,11 +14,15 @@ const counterSlice = createSlice({
     reducers: {
         // increment
         incremented(state){
-            state.value++
-        }
+            state.value++;
+        },
         // decrement
+        decremented(state){
+            state.value--;
+        }
         // reset
     }
 });
 
 export const {incremented} = counterSlice.actions;
+export default counterSlice.reducer;
