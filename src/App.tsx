@@ -1,6 +1,6 @@
 import React from 'react';
 import {useAppDispatch, useAppSelector} from './app/hooks';
-import {incremented, decremented} from './features/counter/counter-slice';
+import {incremented, decremented, amountResetted, amountAdded} from './features/counter/counter-slice';
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +16,14 @@ function App() {
     dispatch(decremented());
   }
 
+  const handleReset = () => {
+    dispatch(amountResetted());
+  }
+
+  const handleAmountAdded = () => {
+    dispatch(amountAdded(10));
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -27,6 +35,12 @@ function App() {
         </button>
         <button onClick={handleDecrement}>
           Decrement
+        </button>
+        <button onClick={handleReset}>
+          Reset
+        </button>
+        <button onClick={handleAmountAdded}>
+          Incrememnt by 10
         </button>
         </div>
       </header>
